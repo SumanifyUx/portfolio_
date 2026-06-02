@@ -1638,35 +1638,7 @@ nav {
             });
         }
 
-        // ── AUTO-SCROLL every 3 seconds ─────────────────────────────
-        (function () {
-            const SCROLL_AMOUNT = 300;   // px to scroll each tick
-            const INTERVAL_MS   = 3000;  // ms between ticks
-            let userScrolling   = false;
-            let userScrollTimer = null;
-
-            // Detect manual user scroll — pause auto-scroll briefly
-            window.addEventListener('scroll', () => {
-                userScrolling = true;
-                clearTimeout(userScrollTimer);
-                userScrollTimer = setTimeout(() => {
-                    userScrolling = false;
-                }, 2000); // resume 2 s after user stops scrolling
-            }, { passive: true });
-
-            setInterval(() => {
-                if (userScrolling) return;   // let user be in control
-
-                const maxY = document.body.scrollHeight - window.innerHeight;
-                if (window.scrollY >= maxY - 5) {
-                    // reached the bottom — loop back to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    window.scrollBy({ top: SCROLL_AMOUNT, behavior: 'smooth' });
-                }
-            }, INTERVAL_MS);
-        })();
-        // ── END AUTO-SCROLL ──────────────────────────────────────────
+        
 
     </script>
 
