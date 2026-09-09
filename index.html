@@ -707,6 +707,14 @@
         line-height: 1.4;
       }
 
+      /* ── wide/desktop screenshot variant of the scrollable gallery ── */
+      .browser-scroll-item {
+        width: 480px;
+      }
+      .browser-scroll-item img {
+        border-radius: 10px;
+      }
+
       /* ── DESIGN SYSTEMS ── */
       .design-systems-section {
         background: var(--cream);
@@ -1268,6 +1276,9 @@
         .phone-scroll-item {
           width: 170px;
         }
+        .browser-scroll-item {
+          width: 280px;
+        }
         .container {
           padding: 0 1.5rem;
         }
@@ -1592,9 +1603,9 @@
             </div>
           </div>
 
-          <!-- Case Study 4 -->
-          <div class="case-item reverse fade-up visible">
-            <div class="case-content">
+          <!-- Case Study 4: Milo Studio -->
+          <div class="case-item case-item-wide fade-up visible" id="case-milo">
+            <div class="case-content-full">
               <span class="case-tag">Enterprise · Content Operations</span>
               <h3 class="case-title">Milo Studio — Bulk Content Operations Platform</h3>
               <p class="case-desc">
@@ -1614,11 +1625,18 @@
                 </div>
               </div>
             </div>
-            <div class="case-visual">
-              <img
-                src="images/milostudio-bulk.jpeg"
-                alt="Milo Studio Bulk Content Operations"
-              />
+
+            <div class="phone-scroll-wrap">
+              <div class="phone-scroll">
+                <figure class="phone-scroll-item browser-scroll-item">
+                  <img src="images/milo-operations-dashboard.png" alt="Milo Studio Bulk Operations dashboard with Status, Preview, Publish, Fragments, Versioning, Copy, Move, Export List, Deactivate, Fragment Reference, Bulk Content Update, and AEM EDS Logs cards" loading="lazy" />
+                  <figcaption>Bulk Operations Dashboard</figcaption>
+                </figure>
+                <figure class="phone-scroll-item browser-scroll-item">
+                  <img src="images/milostudio-bulk-success.png" alt="Milo Studio Bulk Content Update flow showing country and language selection, ending in a Created Successfully confirmation with a job ID" loading="lazy" />
+                  <figcaption>Bulk Content Update — Success Confirmation</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
