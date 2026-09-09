@@ -635,6 +635,78 @@
         background: linear-gradient(135deg, #e8e3d8, #cfc9be);
       }
 
+      /* ── CASE STUDY: full-width variant with scrollable phone gallery ── */
+      .case-item-wide {
+        grid-template-columns: 1fr;
+      }
+
+      .case-content-full {
+        max-width: 760px;
+        margin-bottom: 2.5rem;
+      }
+      .case-content-full .case-desc {
+        margin-bottom: 0;
+      }
+      .case-content-full .case-metrics {
+        margin-top: 1.75rem;
+        margin-bottom: 0;
+        gap: 2.75rem;
+      }
+      .case-pitch-link {
+        display: inline-block;
+        margin-top: 1.75rem;
+      }
+
+      .phone-scroll-wrap {
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0 -1.5rem;
+        padding: 0.5rem 1.5rem 1rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent) transparent;
+      }
+      .phone-scroll-wrap::-webkit-scrollbar {
+        height: 6px;
+      }
+      .phone-scroll-wrap::-webkit-scrollbar-thumb {
+        background: rgba(200, 75, 49, 0.35);
+        border-radius: 4px;
+      }
+      .phone-scroll-wrap::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .phone-scroll {
+        display: flex;
+        gap: 1.5rem;
+        width: max-content;
+      }
+
+      .phone-scroll-item {
+        flex: 0 0 auto;
+        width: 220px;
+        margin: 0;
+      }
+      .phone-scroll-item img {
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+        background: var(--cream);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+      .phone-scroll-item:hover img {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
+      }
+      .phone-scroll-item figcaption {
+        margin-top: 0.85rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: center;
+        line-height: 1.4;
+      }
+
       /* ── DESIGN SYSTEMS ── */
       .design-systems-section {
         background: var(--cream);
@@ -1190,6 +1262,12 @@
         .case-item.reverse .case-visual {
           order: 1;
         }
+        .case-item-wide {
+          grid-template-columns: 1fr;
+        }
+        .phone-scroll-item {
+          width: 170px;
+        }
         .container {
           padding: 0 1.5rem;
         }
@@ -1377,17 +1455,79 @@
         <h2 class="section-title fade-up visible">Case <em>Studies</em></h2>
 
         <div class="case-list">
-          <!-- Case Study 1: placeholder (SARA content coming soon) -->
-          <div class="case-item fade-up visible">
-            <div class="case-content">
-              <span class="case-tag">Coming Soon</span>
-              <h3 class="case-title">New Case Study — In Progress</h3>
+          <!-- Case Study 1: SARA -->
+          <div class="case-item case-item-wide fade-up visible" id="case-sara">
+            <div class="case-content-full">
+              <span class="case-tag">AI · Mobility · Women Safety</span>
+              <h3 class="case-title">SARA — AI-Enabled Cab Booking for Women</h3>
               <p class="case-desc">
-                This case study is being updated. Check back soon.
+                Designed an AI-enabled ride-booking experience built for women, solving
+                city chaos during peak traffic hours and monsoon season. SARA uses intelligent
+                Rain Mode and Heavy Traffic Mode to boost driver availability and reroute rides
+                in real time, backed by a 1-minute driver-backup guarantee so a cancelled ride
+                never leaves a woman stranded. A dedicated Safety Hub — AI face verification,
+                trusted contacts, live location sharing, and emergency SOS — keeps every trip
+                accountable end to end, while a women-only driver network lets women earn safely
+                on their own schedule.
               </p>
+              <div class="case-metrics">
+                <div>
+                  <div class="metric-val">&lt;1 min</div>
+                  <div class="metric-lbl">Driver Backup Time</div>
+                </div>
+                <div>
+                  <div class="metric-val">3</div>
+                  <div class="metric-lbl">Smart AI Modes</div>
+                </div>
+                <div>
+                  <div class="metric-val">100%</div>
+                  <div class="metric-lbl">Women-Only Network</div>
+                </div>
+              </div>
+              <a
+                class="btn-ghost case-pitch-link"
+                href="assets/sara-pitch-deck.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read the Pitch Deck (PDF) ↗</a
+              >
             </div>
-            <div class="case-visual">
-              <div class="case-visual-emoji">✨</div>
+
+            <div class="phone-scroll-wrap">
+              <div class="phone-scroll">
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/welcome.png" alt="SARA app welcome screen with Rain Mode, Backup in 1 minute, and Heavy Traffic Mode" loading="lazy" />
+                  <figcaption>Welcome — Rain &amp; Traffic Modes</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/get-ride.png" alt="SARA get a ride screen with saved Home, Work, and Gym destinations" loading="lazy" />
+                  <figcaption>Where to, Sara?</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/booking-page.png" alt="SARA booking page with SARA Go, Comfort, and Share fare options" loading="lazy" />
+                  <figcaption>Choose Your Ride</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/driver-arriving.png" alt="SARA live tracking screen with Heavy Traffic Mode and Trigger Emergency SOS button" loading="lazy" />
+                  <figcaption>En Route — Live Safety Tracking</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/driver-details.png" alt="SARA driver arriving screen with AI face-verified driver details" loading="lazy" />
+                  <figcaption>Driver Arriving — AI Verified</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/driver-backup.png" alt="SARA finding a new driver screen after a cancellation, backup within 1 minute" loading="lazy" />
+                  <figcaption>1-Minute Driver Backup</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/safety-hub.png" alt="SARA Safety Hub with AI face verification, trusted contacts, and emergency SOS" loading="lazy" />
+                  <figcaption>Safety Hub</figcaption>
+                </figure>
+                <figure class="phone-scroll-item">
+                  <img src="images/sara/subscription.png" alt="SARA drive on your terms screen for women drivers to apply and earn" loading="lazy" />
+                  <figcaption>Drive on Your Terms</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
 
