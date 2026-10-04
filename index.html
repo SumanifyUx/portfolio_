@@ -1297,6 +1297,157 @@
           text-align: center;
         }
       }
+
+      /* ── SARA: readable, scrollable case study ── */
+      .cs-meta {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 1.25rem 2.5rem;
+        justify-content: start;
+        margin: 1.5rem 0 0;
+      }
+      .cs-meta dt {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        margin-bottom: 0.25rem;
+      }
+      .cs-meta dd { font-size: 0.9rem; color: var(--ink); line-height: 1.5; }
+      .cs-meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--border); }
+      .cs-meta a:hover { color: var(--accent); border-color: var(--accent); }
+
+      .cs-reader {
+        min-width: 0;
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 2.5rem;
+        background: #fbf9f5;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06);
+      }
+      .cs-toc { display: flex; flex-direction: column; gap: 0.15rem; align-self: start; position: sticky; top: 6rem; }
+      .cs-toc-label {
+        font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.16em;
+        color: var(--muted); margin-bottom: 0.75rem;
+      }
+      .cs-toc a {
+        display: flex; gap: 0.75rem; align-items: baseline;
+        padding: 0.55rem 0.75rem; border-left: 2px solid var(--border);
+        font-size: 0.92rem; color: var(--muted); text-decoration: none;
+        transition: color 0.2s, border-color 0.2s, background 0.2s;
+      }
+      .cs-toc a span { font-family: var(--serif); font-size: 0.8rem; }
+      .cs-toc a:hover { color: var(--ink); }
+      .cs-toc a.active { color: var(--accent); border-left-color: var(--accent); background: rgba(200, 75, 49, 0.06); }
+      .cs-progress { height: 3px; background: var(--border); border-radius: 2px; margin: 1.25rem 0 1rem; overflow: hidden; }
+      .cs-progress i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.1s linear; }
+      .cs-toc a.cs-toc-pdf {
+        border: none; padding: 0; font-size: 0.75rem; text-transform: uppercase;
+        letter-spacing: 0.1em; color: var(--muted); background: none;
+      }
+      .cs-toc a.cs-toc-pdf:hover { color: var(--accent); }
+
+      .cs-panel {
+        min-width: 0;
+        position: relative;
+        max-height: 78vh;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding-right: 1.5rem;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(200, 75, 49, 0.35) transparent;
+      }
+      .cs-panel:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+      .cs-panel::-webkit-scrollbar { width: 6px; }
+      .cs-panel::-webkit-scrollbar-thumb { background: rgba(200, 75, 49, 0.35); border-radius: 4px; }
+
+      .cs-chapter { padding: 0.5rem 0 3rem; max-width: 720px; }
+      .cs-chapter + .cs-chapter { border-top: 1px solid var(--border); padding-top: 2.5rem; }
+      .cs-chapter#sara-realisation { max-width: none; }
+      .cs-chapter p { font-size: 0.97rem; color: #4a463f; line-height: 1.8; margin-bottom: 1rem; }
+      .cs-kicker {
+        font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+        letter-spacing: 0.16em; color: var(--accent); margin-bottom: 0.6rem;
+      }
+      .cs-h {
+        font-family: var(--serif); font-weight: 300; font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+        letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem;
+      }
+      .cs-sub {
+        font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+        color: var(--ink); margin: 2rem 0 1rem;
+      }
+      .cs-chapter p.cs-lede { font-size: 1.08rem; color: var(--ink); }
+      .cs-chapter p.cs-note { font-size: 0.9rem; color: var(--muted); }
+
+      .cs-problems { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+      .cs-problems li {
+        background: var(--paper); border: 1px solid var(--border); border-radius: 6px;
+        padding: 1rem 1.1rem; font-size: 0.9rem; color: #5a564e; line-height: 1.6;
+      }
+      .cs-problems b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.3rem; }
+
+      .cs-quote {
+        font-family: var(--serif); font-style: italic; font-size: 1.2rem; line-height: 1.5;
+        color: var(--ink); border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1.25rem; margin: 1.5rem 0 0;
+      }
+      .cs-closing { margin: 2rem 0 1.75rem; }
+
+      .cs-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .cs-features article { border-top: 2px solid var(--ink); padding-top: 1rem; }
+      .cs-num { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
+      .cs-features h6 { font-size: 0.95rem; font-weight: 600; margin: 0.6rem 0 0.4rem; line-height: 1.35; }
+      .cs-features p { font-size: 0.88rem; line-height: 1.65; margin: 0; }
+
+      .cs-palette { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+      .cs-palette li {
+        display: grid; grid-template-columns: 28px 1fr auto; grid-template-rows: auto auto;
+        column-gap: 0.75rem; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid var(--border);
+      }
+      .cs-palette i { grid-row: 1 / 3; width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.1); }
+      .cs-palette b { font-size: 0.88rem; font-weight: 600; }
+      .cs-palette code { font-size: 0.75rem; color: var(--muted); }
+      .cs-palette span { grid-column: 2 / 4; font-size: 0.78rem; color: var(--muted); }
+
+      .cs-screens { margin: 1.5rem 0 0; padding-left: 0; padding-right: 0; }
+      .cs-screens .phone-scroll-item { width: 200px; }
+      .cs-screens .phone-scroll-item img { height: auto; }
+      .cs-screens figcaption b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.15rem; }
+
+      .cs-wins { display: flex; flex-direction: column; margin: 0.5rem 0 0; }
+      .cs-wins > div { display: grid; grid-template-columns: 120px 1fr; gap: 1.25rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
+      .cs-wins dt { font-family: var(--serif); font-size: 1.15rem; color: var(--accent); }
+      .cs-wins dd { font-size: 0.93rem; color: #4a463f; line-height: 1.65; }
+
+      .cs-two { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .cs-list { padding-left: 1.1rem; }
+      .cs-list li { font-size: 0.93rem; color: #4a463f; line-height: 1.65; margin-bottom: 0.6rem; }
+      .cs-two p { font-size: 0.93rem; }
+
+      @media (max-width: 900px) {
+        .cs-meta { grid-template-columns: 1fr 1fr; }
+        .cs-reader { grid-template-columns: minmax(0, 1fr); padding: 1.25rem; gap: 1rem; }
+        .cs-toc {
+          flex-direction: row; overflow-x: auto; gap: 0.5rem; position: sticky; top: 4rem; z-index: 5;
+          background: #fbf9f5; padding: 0.5rem 0; margin: -0.5rem 0 0;
+        }
+        .cs-toc-label, .cs-progress, .cs-toc a.cs-toc-pdf { display: none; }
+        .cs-toc a { border-left: none; border-bottom: 2px solid var(--border); white-space: nowrap; padding: 0.45rem 0.6rem; }
+        .cs-toc a.active { border-bottom-color: var(--accent); }
+        .cs-panel { max-height: none; overflow: visible; padding-right: 0; }
+        .cs-problems, .cs-features, .cs-palette, .cs-two { grid-template-columns: 1fr; }
+        .cs-wins > div { grid-template-columns: 1fr; gap: 0.25rem; }
+        .cs-screens { margin-left: -1.25rem; margin-right: -1.25rem; padding-left: 1.25rem; padding-right: 1.25rem; }
+        .cs-screens .phone-scroll-item { width: 170px; }
+      }
+      @media (max-width: 520px) {
+        .cs-meta { grid-template-columns: 1fr; }
+        .case-metrics { flex-wrap: wrap; gap: 1.25rem; }
+      }
     </style>
   </head>
   <body>
@@ -1466,78 +1617,202 @@
         <h2 class="section-title fade-up visible">Case <em>Studies</em></h2>
 
         <div class="case-list">
-          <!-- Case Study 1: SARA -->
+          <!-- Case Study 1: SARA — full readable case study (Motivation → Development → Realisation → Impact) -->
           <div class="case-item case-item-wide fade-up visible" id="case-sara">
             <div class="case-content-full">
               <span class="case-tag">AI · Mobility · Women Safety</span>
               <h3 class="case-title">SARA — AI-Enabled Cab Booking for Women</h3>
               <p class="case-desc">
-                Designed an AI-enabled ride-booking experience built for women, solving
-                city chaos during peak traffic hours and monsoon season. SARA uses intelligent
-                Rain Mode and Heavy Traffic Mode to boost driver availability and reroute rides
-                in real time, backed by a 1-minute driver-backup guarantee so a cancelled ride
-                never leaves a woman stranded. A dedicated Safety Hub — AI face verification,
-                trusted contacts, live location sharing, and emergency SOS — keeps every trip
-                accountable end to end, while a women-only driver network lets women earn safely
-                on their own schedule.
+                A women-focused cab app built around safety, reliability and faster ride availability,
+                designed for the moments when getting home matters most: monsoon evenings and peak-hour commutes.
               </p>
+
+              <dl class="cs-meta">
+                <div><dt>Context</dt><dd>India Designathon — pitch &amp; product concept</dd></div>
+                <div><dt>Presented by</dt><dd>Suman Hemant</dd></div>
+                <div><dt>Contact</dt><dd><a href="tel:+919008523536">+91-9008523536</a><br /><a href="mailto:sumanhemant05@gmail.com">sumanhemant05@gmail.com</a></dd></div>
+              </dl>
+
               <div class="case-metrics">
                 <div>
                   <div class="metric-val">&lt;1 min</div>
-                  <div class="metric-lbl">Driver Backup Time</div>
+                  <div class="metric-lbl">Driver backup on cancellation</div>
                 </div>
                 <div>
                   <div class="metric-val">3</div>
-                  <div class="metric-lbl">Smart AI Modes</div>
+                  <div class="metric-lbl">Differentiating features</div>
                 </div>
                 <div>
-                  <div class="metric-val">AI-Enabled SOS%</div>
-                  <div class="metric-lbl">Detects voice distress instead of SOS</div>
+                  <div class="metric-val">2</div>
+                  <div class="metric-lbl">Peak commute windows served</div>
                 </div>
               </div>
-              <a
-                class="btn-ghost case-pitch-link"
-                href="assets/sara-pitch-deck.pdf"
-                target="_blank"
-                rel="noopener"
-                >Read the Pitch Deck (PDF) ↗</a
-              >
             </div>
 
-            <div class="phone-scroll-wrap">
-              <div class="phone-scroll">
-                <figure class="phone-scroll-item">
-                  <img src="images/welcome.png" alt="SARA app welcome screen with Rain Mode, Backup in 1 minute, and Heavy Traffic Mode" loading="lazy" />
-                  <figcaption>Welcome — Rain &amp; Traffic Modes</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/get-ride.png" alt="SARA get a ride screen with saved Home, Work, and Gym destinations" loading="lazy" />
-                  <figcaption>Where to, Sara?</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/booking-page.png" alt="SARA booking page with SARA Go, Comfort, and Share fare options" loading="lazy" />
-                  <figcaption>Choose Your Ride</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/driver-arriving.png" alt="SARA live tracking screen with Heavy Traffic Mode and Trigger Emergency SOS button" loading="lazy" />
-                  <figcaption>En Route — Live Safety Tracking</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/driver-details.png" alt="SARA driver arriving screen with AI face-verified driver details" loading="lazy" />
-                  <figcaption>Driver Arriving — AI Verified</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/driver-backup.png" alt="SARA finding a new driver screen after a cancellation, backup within 1 minute" loading="lazy" />
-                  <figcaption>1-Minute Driver Backup</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/safety-hub.png" alt="SARA Safety Hub with AI face verification, trusted contacts, and emergency SOS" loading="lazy" />
-                  <figcaption>Safety Hub</figcaption>
-                </figure>
-                <figure class="phone-scroll-item">
-                  <img src="images/subscription.png" alt="SARA drive on your terms screen for women drivers to apply and earn" loading="lazy" />
-                  <figcaption>Drive on Your Terms</figcaption>
-                </figure>
+            <!-- Scrollable reader -->
+            <div class="cs-reader" data-cs-reader>
+              <div class="cs-toc" role="navigation" aria-label="SARA case study chapters">
+                <div class="cs-toc-label">Case study</div>
+                <a href="#sara-motivation" class="active"><span>01</span>Motivation</a>
+                <a href="#sara-development"><span>02</span>Development</a>
+                <a href="#sara-realisation"><span>03</span>Realisation</a>
+                <a href="#sara-impact"><span>04</span>Impact</a>
+                <div class="cs-progress" aria-hidden="true"><i></i></div>
+                <a class="cs-toc-pdf" href="assets/sara-pitch-deck.pdf" target="_blank" rel="noopener">Pitch deck (PDF) ↗</a>
+              </div>
+
+              <div class="cs-panel" tabindex="0" aria-label="SARA case study, scrollable">
+                <!-- 01 MOTIVATION -->
+                <section class="cs-chapter" id="sara-motivation">
+                  <div class="cs-kicker">01 — Motivation</div>
+                  <h4 class="cs-h">Why this problem, and why now</h4>
+                  <p class="cs-lede">
+                    Cab availability drops sharply in the monsoon and during peak hours, exactly when women
+                    most need a reliable ride. Existing safety features are designed for ideal conditions,
+                    not for the moments that matter.
+                  </p>
+                  <ul class="cs-problems">
+                    <li><b>Availability collapses at the worst time.</b> Cab supply drops sharply in monsoon and during peak hours, exactly when women most need a reliable ride.</li>
+                    <li><b>SOS buttons are passive.</b> They only help if someone is calm and free enough to press one.</li>
+                    <li><b>OTPs verify a phone, not a person.</b> An OTP confirms a phone number, not the person getting into the car.</li>
+                    <li><b>More people are commuting.</b> Hybrid work has pushed more commutes into the same crowded windows.</li>
+                  </ul>
+                  <blockquote class="cs-quote">
+                    How might we give women a safer, more reliable ride home, without the uncertainty of waiting,
+                    searching or being left stranded?
+                  </blockquote>
+                </section>
+
+                <!-- 02 DEVELOPMENT -->
+                <section class="cs-chapter" id="sara-development">
+                  <div class="cs-kicker">02 — Development</div>
+                  <h4 class="cs-h">From problem to product</h4>
+                  <p>
+                    SARA is a women-focused cab app built around safety, reliability and faster ride availability.
+                    AI-powered face verification checks that the booked driver matches the verified profile, while an
+                    intelligent backup system automatically searches for a replacement driver within 1 minute if a ride
+                    is cancelled. <b>Rain Mode</b> and <b>Heavy Traffic Mode</b> dynamically boost driver search and
+                    optimise supply to reduce waiting and cancellations when demand spikes. SARA also offers
+                    part-time jobs for women as drivers.
+                  </p>
+
+                  <h5 class="cs-sub">Three features that set SARA apart</h5>
+                  <div class="cs-features">
+                    <article>
+                      <span class="cs-num">01</span>
+                      <h6>AI Face Verification Ride-Start</h6>
+                      <p>Rides start on a face match to the registered passenger, not an OTP, confirming the right person is actually getting in.</p>
+                    </article>
+                    <article>
+                      <span class="cs-num">02</span>
+                      <h6>Voice-Distress SOS for passengers and women drivers</h6>
+                      <p>The app listens for stress signals in either the passenger's or the driver's voice and can alert police automatically, with no button and no delay.</p>
+                    </article>
+                    <article>
+                      <span class="cs-num">03</span>
+                      <h6>Peak-Hour, Women-First Model</h6>
+                      <p>Runs 8–11 AM and 5–9 PM, the highest-risk commute windows, giving drivers a structured part-time option too.</p>
+                    </article>
+                  </div>
+
+                  <h5 class="cs-sub">Visual language</h5>
+                  <p class="cs-note">
+                    The palette borrows from a city at dusk (night sky, sunset glow, warm street light) so the
+                    product feels calm by default, with a bright accent saved for the moments that need attention.
+                  </p>
+                  <ul class="cs-palette">
+                    <li><i style="background:#26183F"></i><b>Deep Indigo</b><code>#26183F</code><span>Night sky / background shadow</span></li>
+                    <li><i style="background:#47275F"></i><b>Dark Violet</b><code>#47275F</code><span>Sky gradient / building silhouettes</span></li>
+                    <li><i style="background:#7B3855"></i><b>Mauve Wine</b><code>#7B3855</code><span>Mid-tone sky transition</span></li>
+                    <li><i style="background:#B8555A"></i><b>Rosy Red</b><code>#B8555A</code><span>Sunset horizon glow</span></li>
+                    <li><i style="background:#E9906E"></i><b>Peach Orange</b><code>#E9906E</code><span>Warm city light glow</span></li>
+                    <li><i style="background:#F0F3F5"></i><b>Soft White</b><code>#F0F3F5</code><span>Highlights / text / UI elements</span></li>
+                    <li><i style="background:#655295"></i><b>Muted Purple</b><code>#655295</code><span>Mid-sky / accent tones</span></li>
+                    <li><i style="background:#289DF4"></i><b>Bright Blue</b><code>#289DF4</code><span>Accent pop (car light, sign)</span></li>
+                  </ul>
+                </section>
+
+                <!-- 03 REALISATION -->
+                <section class="cs-chapter" id="sara-realisation">
+                  <div class="cs-kicker">03 — Realisation</div>
+                  <h4 class="cs-h">The end-to-end journey</h4>
+                  <p>
+                    Eight key screens follow a rider from opening the app to getting home safely, plus the
+                    driver-side flow that brings more women into the supply pool. Scroll sideways to follow the journey.
+                  </p>
+                  <div class="phone-scroll-wrap cs-screens">
+                    <div class="phone-scroll">
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/01-welcome.webp" alt="SARA welcome screen: Reliable rides, women-first, with Rain Mode, 1-minute backup and Heavy Traffic Mode" loading="lazy" width="600" height="1309" />
+                        <figcaption><b>Welcome</b>AI modes for rain &amp; traffic, active 9–11 AM and 5–10 PM</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/02-where-to.webp" alt="Where to, Sara? screen with saved Home, Work and Gym destinations and an SOS button" loading="lazy" width="600" height="1301" />
+                        <figcaption><b>Where to?</b>Saved places and an always-visible SOS</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/03-choose-ride.webp" alt="Ride options SARA Go, Comfort and Share with Rain Mode priority matching banner" loading="lazy" width="600" height="1301" />
+                        <figcaption><b>Choose a ride</b>Rain Mode turns on priority matching</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/04-en-route.webp" alt="Driver en route screen with AI face-verified driver details" loading="lazy" width="600" height="1303" />
+                        <figcaption><b>Driver en route</b>AI face-verified driver profile</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/05-heavy-traffic.webp" alt="Heavy Traffic Mode smart rerouting with live location sharing and emergency SOS" loading="lazy" width="600" height="1303" />
+                        <figcaption><b>On the trip</b>Smart rerouting, live location sharing, SOS</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/06-driver-backup.webp" alt="Finding you a new driver screen after a cancellation, under 1 minute" loading="lazy" width="600" height="1309" />
+                        <figcaption><b>Backup in &lt;1 min</b>Cancellations are absorbed automatically</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/07-safety-hub.webp" alt="Safety Hub with AI face verification, trusted contacts, emergency SOS, ride recording and night mode safety" loading="lazy" width="600" height="1309" />
+                        <figcaption><b>Safety Hub</b>Every safety control in one place</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item">
+                        <img src="images/sara/08-drive-on-your-terms.webp" alt="Drive on your terms screen inviting women to apply as part-time drivers" loading="lazy" width="600" height="1435" />
+                        <figcaption><b>Drive on your terms</b>Part-time, women-only driver network</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- 04 IMPACT -->
+                <section class="cs-chapter" id="sara-impact">
+                  <div class="cs-kicker">04 — Impact</div>
+                  <h4 class="cs-h">Why SARA wins</h4>
+                  <dl class="cs-wins">
+                    <div><dt>Speed</dt><dd>Active safety, not passive: distress is detected automatically from voice instead of waiting on a manual SOS press.</dd></div>
+                    <div><dt>Certainty</dt><dd>A face match replaces a forwardable OTP, closing the one verification gap every competitor still leaves open.</dd></div>
+                    <div><dt>Response</dt><dd>Direct-to-police alerting removes the extra step of a call centre or in-app support queue relaying the emergency.</dd></div>
+                    <div><dt>Focus</dt><dd>Concentrating on the two highest-risk windows means denser, more reliable driver supply exactly when rivals thin out.</dd></div>
+                    <div><dt>Supply</dt><dd>Peak-hours-only shifts attract drivers who won't commit to full-day driving, widening supply where it's scarcest.</dd></div>
+                  </dl>
+
+                  <div class="cs-two">
+                    <div>
+                      <h5 class="cs-sub">Business model</h5>
+                      <ul class="cs-list">
+                        <li>Per-ride commission, priced competitively to build early trust and volume.</li>
+                        <li>B2B safe-commute partnerships with corporates for their women employees.</li>
+                        <li>Police-partnered SOS network, reinforcing both safety and city-level credibility.</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="cs-sub">What's next</h5>
+                      <p>
+                        Mentorship to scale AI-powered driver verification and SureCommute for women, support in
+                        structuring police-response partnerships and distress detection, and early seed funding for a
+                        single-city pilot focused on peak commute hours, so women never have to worry about being stranded,
+                        frustrated by endless cab cancellations, or forced to compromise on safety just to get home.
+                      </p>
+                    </div>
+                  </div>
+
+                  <blockquote class="cs-quote cs-closing">SARA — because a safe ride home shouldn't depend on luck.</blockquote>
+                  <a class="btn-ghost" href="assets/sara-pitch-deck.pdf" target="_blank" rel="noopener">Read the full pitch deck (PDF) ↗</a>
+                </section>
               </div>
             </div>
           </div>
@@ -1921,6 +2196,44 @@
           heroCard.style.transform = 'perspective(1000px) rotateY(-4deg) rotateX(2deg)'
         })
       }
+          /* ── SARA case study reader: chapter nav, scroll-spy, progress ── */
+      document.querySelectorAll('[data-cs-reader]').forEach((reader) => {
+        const panel = reader.querySelector('.cs-panel')
+        const links = [...reader.querySelectorAll('.cs-toc a[href^="#"]')]
+        const bar = reader.querySelector('.cs-progress i')
+        const chapters = links.map((a) => reader.querySelector(a.getAttribute('href')))
+        const inner = () => panel.scrollHeight > panel.clientHeight + 4 && getComputedStyle(panel).overflowY !== 'visible'
+
+        links.forEach((a, i) => {
+          a.addEventListener('click', (e) => {
+            e.preventDefault()
+            const ch = chapters[i]
+            if (inner()) {
+              panel.scrollTo({ top: ch.offsetTop, behavior: 'smooth' })
+            } else {
+              const y = ch.getBoundingClientRect().top + window.scrollY - 130
+              window.scrollTo({ top: y, behavior: 'smooth' })
+            }
+          })
+        })
+
+        const update = () => {
+          let idx = 0
+          if (inner()) {
+            const top = panel.scrollTop + 80
+            chapters.forEach((ch, i) => { if (ch.offsetTop <= top) idx = i })
+            if (panel.scrollTop + panel.clientHeight >= panel.scrollHeight - 4) idx = chapters.length - 1
+            if (bar) bar.style.width = (panel.scrollTop / (panel.scrollHeight - panel.clientHeight)) * 100 + '%'
+          } else {
+            chapters.forEach((ch, i) => { if (ch.getBoundingClientRect().top < 180) idx = i })
+          }
+          links.forEach((a, i) => a.classList.toggle('active', i === idx))
+        }
+        panel.addEventListener('scroll', update, { passive: true })
+        window.addEventListener('scroll', update, { passive: true })
+        window.addEventListener('resize', update)
+        update()
+      })
     </script>
   </body>
 </html>
