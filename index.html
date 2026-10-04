@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suman Hemant — Product Designer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link href="./ux1_files/css2" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <style>
       :root {
         --ink: #0d0d0d;
@@ -1416,6 +1417,8 @@
       .cs-screens { margin: 1.5rem 0 0; padding-left: 0; padding-right: 0; }
       .cs-screens .phone-scroll-item { width: 200px; }
       .cs-screens .phone-scroll-item img { height: auto; }
+      .cs-screens .browser-scroll-item { width: 460px; }
+      .cs-screens .browser-scroll-item img { border: 1px solid var(--ink); border-radius: 0; box-shadow: none; }
       .cs-screens figcaption b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.15rem; }
 
       .cs-wins { display: flex; flex-direction: column; margin: 0.5rem 0 0; }
@@ -1447,6 +1450,167 @@
       @media (max-width: 520px) {
         .cs-meta { grid-template-columns: 1fr; }
         .case-metrics { flex-wrap: wrap; gap: 1.25rem; }
+      }
+
+
+      /* ── Argus additions: process steps + annotated screenshot ── */
+      .cs-steps { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 1.75rem 0 0.5rem; counter-reset: st; }
+      .cs-steps li { counter-increment: st; border-top: 1px solid var(--ink); padding: 0.85rem 1rem 0 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; position: relative; }
+      .cs-steps li::before { content: counter(st, decimal-leading-zero); display: block; font-size: 0.72rem; color: var(--accent); font-weight: 600; margin-bottom: 0.35rem; }
+      .cs-steps li span { display: block; color: var(--ink); font-weight: 600; font-size: 0.92rem; margin-bottom: 0.2rem; }
+      .cs-annotated { margin: 1.5rem 0 0; }
+      .cs-annotated-img { position: relative; border: 1px solid var(--ink); background: var(--cream); }
+      .cs-annotated-img img { display: block; width: 100%; height: auto; }
+      .pin {
+        position: absolute; transform: translate(-50%, -50%); width: 22px; height: 22px;
+        display: grid; place-items: center; background: var(--accent); color: #fff;
+        font-size: 0.75rem; font-weight: 700; font-family: var(--sans); box-shadow: 0 0 0 3px #fff;
+      }
+      .cs-legend { list-style: none; counter-reset: lg; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem 1.5rem; margin-top: 1.5rem; }
+      .cs-legend li { counter-increment: lg; position: relative; padding-left: 2.1rem; font-size: 0.86rem; color: #444; line-height: 1.55; }
+      .cs-legend li::before {
+        content: counter(lg); position: absolute; left: 0; top: 0.1rem; width: 22px; height: 22px;
+        display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 700;
+      }
+      .cs-legend b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.15rem; }
+      @media (max-width: 900px) {
+        .cs-steps { grid-template-columns: 1fr; }
+        .cs-steps li { padding-bottom: 0.75rem; }
+        .cs-screens .browser-scroll-item { width: 280px; }
+        .cs-legend { grid-template-columns: 1fr; }
+        .pin { width: 20px; height: 20px; font-size: 0.65rem; box-shadow: 0 0 0 2px #fff; }
+      }
+
+      /* ════════════════════════════════════════════════════════════
+         THEME — Swiss editorial (white, ink, one red, strict grid)
+         Overrides everything above. Delete this block to revert.
+         ════════════════════════════════════════════════════════════ */
+      :root {
+        --ink: #111111;
+        --paper: #ffffff;
+        --cream: #f3f3f1;
+        --accent: #e2412c;
+        --accent2: #111111;
+        --muted: #6e6e6e;
+        --border: rgba(17, 17, 17, 0.14);
+        --serif: 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+        --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        --radius: 0;
+      }
+      body { background: var(--paper); color: var(--ink); font-feature-settings: 'ss01', 'cv11'; counter-reset: sec; }
+      body::before { display: none; }
+      em { font-style: normal; }
+
+      /* nav */
+      nav { background: rgba(255, 255, 255, 0.94); padding: 1.1rem 3rem; border-bottom: 1px solid var(--ink); }
+      .nav-logo { font-family: var(--serif); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; }
+      .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.02em; text-transform: none; color: var(--ink); }
+      .nav-cta, .btn-primary, .btn-white { border-radius: 0; }
+      .nav-cta { border-width: 1px; font-size: 0.75rem; letter-spacing: 0.06em; }
+
+      /* hero */
+      .hero { background: var(--paper); border-bottom: 1px solid var(--ink); }
+      .hero-eyebrow { color: var(--ink); font-weight: 600; letter-spacing: 0.12em; font-size: 0.72rem; }
+      .hero-eyebrow::before { width: 10px; height: 10px; background: var(--accent); }
+      .hero-title { font-family: var(--serif); font-weight: 600; font-size: clamp(3.6rem, 7.5vw, 7rem); line-height: 0.92; letter-spacing: -0.05em; }
+      .hero-title em { font-style: normal; font-weight: 600; color: var(--muted); }
+      .hero-subtitle { font-family: var(--serif); font-style: normal; font-weight: 400; color: var(--ink); font-size: clamp(1.3rem, 2.2vw, 1.8rem); letter-spacing: -0.02em; line-height: 1.25; margin-top: 1.25rem; }
+      .hero-desc { color: #3d3d3d; }
+      .hero-stats { border-top: 1px solid var(--ink); }
+      .stat-num { font-family: var(--serif); font-weight: 600; letter-spacing: -0.03em; }
+      .hero-right { background: var(--cream); border-left: 1px solid var(--ink); }
+      .hero-visual-bg { display: none; }
+      .hero-mockup { border-radius: 0 !important; box-shadow: none !important; }
+
+      /* marquee */
+      .marquee-strip { background: var(--paper); color: var(--ink); border-bottom: 1px solid var(--ink); }
+      .marquee-item { font-family: var(--sans); font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
+      .marquee-dot { color: var(--accent); }
+
+      /* section heads: numbered Swiss labels */
+      section { border-bottom: 1px solid var(--border); }
+      .section-label { color: var(--ink); font-weight: 600; letter-spacing: 0.12em; font-size: 0.72rem; counter-increment: sec; }
+      .section-label::before { content: counter(sec, decimal-leading-zero); width: auto; height: auto; background: none; color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 0.25rem; }
+      .section-title { font-family: var(--serif); font-weight: 600; letter-spacing: -0.04em; line-height: 1; font-size: clamp(2.4rem, 5vw, 4.2rem); }
+      .section-title em { font-style: normal; font-weight: 600; color: var(--muted); }
+
+      /* about + process */
+      .about-section, .design-systems-section, .faq-section { background: var(--paper); }
+      .about-intro { font-family: var(--serif); font-weight: 500; letter-spacing: -0.02em; }
+      .skill-pill { border-radius: 0; border: 1px solid var(--ink); background: transparent; color: var(--ink); }
+      .skill-pill:hover { background: var(--ink); color: var(--paper); }
+      .process-step { border-top: 1px solid var(--ink); }
+      .step-num { font-family: var(--sans); color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+      .step-title { font-weight: 600; }
+
+      /* case studies */
+      .work-section { background: var(--paper); }
+      .case-item { border-top: 1px solid var(--ink); }
+      .case-tag { background: none; border: none; padding: 0; color: var(--ink); font-weight: 600; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; }
+      .case-tag::before { content: ''; width: 8px; height: 8px; background: var(--accent); }
+      .case-title { font-family: var(--serif); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; }
+      .case-desc { color: #3d3d3d; }
+      .case-metrics { border-color: var(--ink); }
+      .metric-val { font-family: var(--serif); font-weight: 600; color: var(--ink); letter-spacing: -0.03em; }
+      .metric-lbl { color: var(--muted); letter-spacing: 0.06em; }
+      .case-visual { border-radius: 0; box-shadow: none; border: 1px solid var(--ink); background: var(--cream); }
+      .browser-scroll-item img { border-radius: 0; }
+      .btn-ghost { color: var(--ink); border-bottom: 1px solid var(--ink); font-weight: 600; letter-spacing: 0.06em; }
+      .btn-ghost:hover { color: var(--accent); border-color: var(--accent); }
+      .btn-primary:hover { background: var(--accent); transform: none; }
+
+      /* SARA reader */
+      .cs-reader { background: var(--paper); border: 1px solid var(--ink); border-radius: 0; box-shadow: none; }
+      .cs-toc a { border-left-width: 1px; font-size: 0.85rem; }
+      .cs-toc a span { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+      .cs-toc a.active { color: var(--ink); font-weight: 600; border-left: 3px solid var(--accent); background: none; }
+      .cs-kicker { color: var(--accent); letter-spacing: 0.12em; }
+      .cs-h { font-family: var(--serif); font-weight: 600; letter-spacing: -0.03em; }
+      .cs-chapter p { color: #333; }
+      .cs-problems li { background: var(--paper); border: none; border-top: 1px solid var(--ink); border-radius: 0; padding: 0.9rem 0 0; }
+      .cs-quote { font-family: var(--serif); font-style: normal; font-weight: 500; letter-spacing: -0.02em; font-size: 1.35rem; border-left: 3px solid var(--accent); }
+      .cs-num, .cs-wins dt { font-family: var(--serif); font-weight: 600; }
+      .cs-wins dt { color: var(--ink); }
+      .cs-palette i { border-radius: 0; }
+      .cs-meta dt { color: var(--muted); }
+
+      /* design systems + highlights */
+      .ds-card { border-radius: 0; box-shadow: none !important; border: 1px solid var(--ink); background: var(--paper); transform: none !important; }
+      .ds-media { border-radius: 0; }
+      .ds-card-tag { color: var(--accent); }
+      .ds-card h4, .work-card-overlay h4 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.02em; }
+      .ds-link { color: var(--ink); border-bottom: 1px solid var(--ink); }
+      .highlights-section { background: var(--paper); }
+      .work-card { border-radius: 0; }
+
+      /* values (inverted block) */
+      .values-section { background: var(--ink); }
+      .values-section .section-label { color: #fff; }
+      .values-section .section-label::before { background: none; color: var(--accent); }
+      .values-section .section-title em { color: rgba(255, 255, 255, 0.45); }
+      .value-card { border-radius: 0; background: transparent; border-top: 1px solid rgba(255, 255, 255, 0.35); }
+      .value-card h4 { font-family: var(--serif); font-weight: 600; }
+
+      /* faq */
+      .faq-item { border-top: 1px solid var(--ink); }
+      .faq-question { font-family: var(--serif); font-weight: 500; letter-spacing: -0.015em; }
+      .faq-icon { color: var(--accent); }
+
+      /* contact + footer */
+      .contact-section { background: var(--accent); }
+      .contact-title { font-family: var(--serif); font-weight: 600; letter-spacing: -0.045em; }
+      .contact-title em { font-style: normal; font-weight: 600; color: rgba(255, 255, 255, 0.6); }
+      .contact-section .section-label::before { color: #fff; background: none; }
+      .btn-white { color: var(--ink); }
+      .btn-white:hover { background: var(--ink); color: #fff; }
+      footer { background: var(--paper); color: var(--ink); border-top: 1px solid var(--ink); }
+      .footer-brand { font-family: var(--serif); font-weight: 600; color: var(--ink); }
+      .footer-links a, .footer-copy { color: var(--muted); }
+      .footer-links a:hover { color: var(--accent); }
+
+      @media (max-width: 900px) {
+        nav { padding: 0.9rem 1.5rem; }
+        .hero-right { border-left: none; border-top: 1px solid var(--ink); }
       }
     </style>
   </head>
@@ -1817,33 +1981,183 @@
             </div>
           </div>
 
-          <!-- Case Study 2 -->
-          <div class="case-item reverse fade-up visible">
-            <div class="case-content">
+          <!-- Case Study 2: Argus — readable case study (Motivation → Development → Realisation → Impact) -->
+          <div class="case-item case-item-wide fade-up visible" id="case-argus">
+            <div class="case-content-full">
               <span class="case-tag">AI · Incident Management</span>
-              <h3 class="case-title">Argus — Incident Management Dashboard</h3>
+              <h3 class="case-title">Argus — AI-Powered Incident Management Dashboard</h3>
               <p class="case-desc">
-                Designed an AI-powered incident management platform for tracking, triaging, and
-                resolving Critical Situation Operations in real time. Features include a unified
-                CSO overview, on-call schedules, live incident feeds with join-room functionality,
-                and an AI chat assistant — reducing response time and cognitive load for ops teams.
+                A self-initiated proposal that became an approved project: one AI-assisted place to track,
+                triage and resolve Critical Situation Operations (CSOs) on our web platform, which until then
+                had no dedicated incident management tool.
               </p>
+
+              <dl class="cs-meta">
+                <div><dt>Context</dt><dd>Adobe — internal tool for the web platform</dd></div>
+                <div><dt>Origin</dt><dd>Self-initiated, proposed to and approved by my manager</dd></div>
+                <div><dt>Users</dt><dd>Everyone involved in handling incidents: on-call engineers, incident managers, service owners</dd></div>
+              </dl>
+
               <div class="case-metrics">
                 <div>
-                  <div class="metric-val">15 min</div>
-                  <div class="metric-lbl">Avg. Analysis Time</div>
+                  <div class="metric-val">0 → 1</div>
+                  <div class="metric-lbl">First dedicated incident tool on the platform</div>
                 </div>
                 <div>
-                  <div class="metric-val">45</div>
-                  <div class="metric-lbl">Resolved Cases</div>
+                  <div class="metric-val">4</div>
+                  <div class="metric-lbl">Core views in one dashboard</div>
+                </div>
+                <div>
+                  <div class="metric-val">AI</div>
+                  <div class="metric-lbl">Built-in chat assistant</div>
                 </div>
               </div>
             </div>
-            <div class="case-visual">
-              <img
-                src="images/argus.png"
-                alt="Argus Dashboard"
-              />
+
+            <div class="cs-reader" data-cs-reader>
+              <div class="cs-toc" role="navigation" aria-label="Argus case study chapters">
+                <div class="cs-toc-label">Case study</div>
+                <a href="#argus-motivation" class="active"><span>01</span>Motivation</a>
+                <a href="#argus-development"><span>02</span>Development</a>
+                <a href="#argus-realisation"><span>03</span>Realisation</a>
+                <a href="#argus-impact"><span>04</span>Impact</a>
+                <div class="cs-progress" aria-hidden="true"><i></i></div>
+                <a class="cs-toc-pdf" href="https://sumanifyux.github.io/portfolio_/argus-case-study.pdf" target="_blank" rel="noopener">Case study (PDF) ↗</a>
+              </div>
+
+              <div class="cs-panel" tabindex="0" aria-label="Argus case study, scrollable">
+                <!-- 01 MOTIVATION -->
+                <section class="cs-chapter" id="argus-motivation">
+                  <div class="cs-kicker">01 — Motivation</div>
+                  <h4 class="cs-h">An incident platform with no incident tool</h4>
+                  <p class="cs-lede">
+                    When something breaks in production, every minute counts. Yet our web platform had no
+                    dedicated place to manage incidents: no single view of what was on fire, who was
+                    responding, or where to jump in.
+                  </p>
+                  <ul class="cs-problems">
+                    <li><b>No single source of truth.</b> There was no dedicated incident management tool on the web platform, so the state of an incident had to be pieced together from different places.</li>
+                    <li><b>Hard to see the whole picture.</b> Without one overview, it was difficult to tell at a glance which situations were active, which were resolved and which services were affected.</li>
+                    <li><b>Slow to get people into the room.</b> Responders needed a faster way from "you've been requested" to actually joining the situation room.</li>
+                    <li><b>Context lives in people's heads.</b> Answering "what happened, and what's been tried?" depended on whoever happened to be online.</li>
+                  </ul>
+                  <blockquote class="cs-quote">
+                    How might we give everyone handling an incident one calm, AI-assisted place to see what's
+                    happening and act on it straight away?
+                  </blockquote>
+                </section>
+
+                <!-- 02 DEVELOPMENT -->
+                <section class="cs-chapter" id="argus-development">
+                  <div class="cs-kicker">02 — Development</div>
+                  <h4 class="cs-h">From a vision to an approved project</h4>
+                  <p>
+                    Argus started as my own idea: an AI-powered dashboard that brings incident management into
+                    the web platform. I shaped the vision into a proposal, presented it to my manager, and got
+                    the go-ahead to build it with the team. That meant designing not just the screens but the
+                    case for why the tool should exist at all.
+                  </p>
+
+                  <ol class="cs-steps">
+                    <li><span>Spot the gap</span>No dedicated incident tool existed on the platform.</li>
+                    <li><span>Form a vision</span>An AI-powered dashboard as the single place for CSOs.</li>
+                    <li><span>Propose</span>Pitched the idea and its value to my manager.</li>
+                    <li><span>Approved</span>The proposal was approved and the work began.</li>
+                    <li><span>Design</span>Information architecture, dashboard UI and AI assistant.</li>
+                  </ol>
+
+                  <h5 class="cs-sub">Design principles</h5>
+                  <div class="cs-features">
+                    <article>
+                      <span class="cs-num">01</span>
+                      <h6>Status at a glance</h6>
+                      <p>Each situation carries a colour-coded edge and label (red for active, green for resolved), so the feed can be scanned in seconds.</p>
+                    </article>
+                    <article>
+                      <span class="cs-num">02</span>
+                      <h6>Action where attention is</h6>
+                      <p>"Join CSO Room" sits on every incident card and switches off once a case is resolved, so the next step is always one click away.</p>
+                    </article>
+                    <article>
+                      <span class="cs-num">03</span>
+                      <h6>AI alongside, not instead</h6>
+                      <p>The assistant is docked beside the feed, so people can ask questions without losing sight of the live incidents.</p>
+                    </article>
+                  </div>
+                </section>
+
+                <!-- 03 REALISATION -->
+                <section class="cs-chapter" id="argus-realisation">
+                  <div class="cs-kicker">03 — Realisation</div>
+                  <h4 class="cs-h">The Argus dashboard</h4>
+                  <p>
+                    One screen brings together the overview, a live feed of the last 24 hours and the AI
+                    assistant. The numbered points below show how the design principles turned into interface.
+                  </p>
+                  <figure class="cs-annotated">
+                    <div class="cs-annotated-img">
+                      <img src="images/argus.png" alt="Argus dashboard: service filter, navigation, summary cards, a feed of CSOs from the last 24 hours with Join CSO Room links, and an AI chat panel" loading="lazy" width="1061" height="715" />
+                      <span class="pin" style="left:20.1%;top:15.4%">1</span>
+                      <span class="pin" style="left:19.4%;top:30.4%">2</span>
+                      <span class="pin" style="left:47.8%;top:19%">3</span>
+                      <span class="pin" style="left:21%;top:45.2%">4</span>
+                      <span class="pin" style="left:76.2%;top:53.6%">5</span>
+                      <span class="pin" style="left:89%;top:35.5%">6</span>
+                    </div>
+                    <ol class="cs-legend">
+                      <li><b>Service filter</b>Narrow everything to one affected service, or see all.</li>
+                      <li><b>Focused navigation</b>Overview, On-call schedule, CSO overview and Settings; nothing else competes for attention.</li>
+                      <li><b>Summary cards</b>Total CSOs, average analysis time and resolved cases, for an instant read on the day.</li>
+                      <li><b>Live CSO feed</b>The last 24 hours, colour-coded by status, with the affected service and time on every card.</li>
+                      <li><b>Join CSO Room</b>A direct route from "you've been requested" into the situation room; disabled once resolved.</li>
+                      <li><b>AI assistant</b>"Ask me about any topic": a docked chat for questions about incidents, kept beside the feed.</li>
+                    </ol>
+                  </figure>
+
+                  <h5 class="cs-sub">Beyond the dashboard</h5>
+                  <p>Five more views complete the flow, from knowing who to page to closing an incident. Scroll sideways to see them all.</p>
+                  <div class="phone-scroll-wrap cs-screens">
+                    <div class="phone-scroll">
+                      <figure class="phone-scroll-item browser-scroll-item">
+                        <img src="images/argus-02-on-call.webp" alt="Argus On-call schedule screen: Who is on call now, the escalation path and handovers" loading="lazy" width="2122" height="1430" />
+                        <figcaption><b>On-call schedule</b>Who is on call now, the escalation path and handovers</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item browser-scroll-item">
+                        <img src="images/argus-03-cso-overview.webp" alt="Argus CSO overview screen: Every situation in one filterable table" loading="lazy" width="2122" height="1430" />
+                        <figcaption><b>CSO overview</b>Every situation in one filterable table</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item browser-scroll-item">
+                        <img src="images/argus-04-situation-room.webp" alt="Argus Situation room screen: AI summary, timeline and responders per incident" loading="lazy" width="2122" height="1430" />
+                        <figcaption><b>Situation room</b>AI summary, timeline and responders per incident</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item browser-scroll-item">
+                        <img src="images/argus-05-ai-assistant.webp" alt="Argus AI assistant in use screen: Similar past incidents, next steps, drafted updates" loading="lazy" width="2122" height="1430" />
+                        <figcaption><b>AI assistant in use</b>Similar past incidents, next steps, drafted updates</figcaption>
+                      </figure>
+                      <figure class="phone-scroll-item browser-scroll-item">
+                        <img src="images/argus-06-settings.webp" alt="Argus Settings screen: Services followed, notifications, AI preferences" loading="lazy" width="2122" height="1430" />
+                        <figcaption><b>Settings</b>Services followed, notifications, AI preferences</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- 04 IMPACT -->
+                <section class="cs-chapter" id="argus-impact">
+                  <div class="cs-kicker">04 — Impact</div>
+                  <h4 class="cs-h">What Argus changes</h4>
+                  <dl class="cs-wins">
+                    <div><dt>Ownership</dt><dd>A self-initiated idea, proposed bottom-up and approved by my manager: the platform's first dedicated incident management tool.</dd></div>
+                    <div><dt>Visibility</dt><dd>One overview replaces piecing an incident together from different places.</dd></div>
+                    <div><dt>Speed</dt><dd>Responders go from a request to the situation room in a single click.</dd></div>
+                    <div><dt>Focus</dt><dd>Colour-coded status and AI help aim to lower the cognitive load on people working under pressure.</dd></div>
+                  </dl>
+                  <!-- TODO (Suman): add real outcomes here once you have them, e.g. adoption, feedback quotes, before/after time-to-join. -->
+                  <!-- TODO (Suman): add a short "Reflection": what you learned and what you would do differently. -->
+                  <blockquote class="cs-quote cs-closing">Incidents are stressful. The tool shouldn't be.</blockquote>
+                  <a class="btn-ghost" href="https://sumanifyux.github.io/portfolio_/argus-case-study.pdf" target="_blank" rel="noopener">Read the full Argus case study (PDF) ↗</a>
+                </section>
+              </div>
             </div>
           </div>
 
