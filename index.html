@@ -1854,27 +1854,27 @@
           <div class="case-item case-item-wide fade-up visible" id="case-argus">
             <div class="case-content-full">
               <span class="case-tag">AI · Incident Management</span>
-              <h3 class="case-title">Argus — AI-Powered Incident Management Dashboard</h3>
+              <h3 class="case-title">Argus — An Incident Management Dashboard I Proposed</h3>
               <p class="case-desc">
-                A self-initiated proposal that became an approved project: one AI-assisted place to track,
-                triage and resolve Critical Situation Operations (CSOs) on our web platform, which until then
-                had no dedicated incident management tool.
+                Our web platform didn't have a proper incident management tool. I noticed the gap, pitched the
+                idea of an AI-assisted dashboard to my manager, got it approved, and designed it: one place to
+                see, triage and join every Critical Situation Operation (CSO).
               </p>
 
               <dl class="cs-meta">
                 <div><dt>Context</dt><dd>Adobe — internal tool for the web platform</dd></div>
-                <div><dt>Origin</dt><dd>Self-initiated, proposed to and approved by my manager</dd></div>
-                <div><dt>Users</dt><dd>Everyone involved in handling incidents: on-call engineers, incident managers, service owners</dd></div>
+                <div><dt>Origin</dt><dd>My own idea, pitched to my manager and approved</dd></div>
+                <div><dt>Users</dt><dd>On-call engineers, incident managers and service owners</dd></div>
               </dl>
 
               <div class="case-metrics">
                 <div>
                   <div class="metric-val">0 → 1</div>
-                  <div class="metric-lbl">First dedicated incident tool on the platform</div>
+                  <div class="metric-lbl">No incident tool before this</div>
                 </div>
                 <div>
                   <div class="metric-val">4</div>
-                  <div class="metric-lbl">Core views in one dashboard</div>
+                  <div class="metric-lbl">Views: dashboard, on-call, CSOs, settings</div>
                 </div>
                 <div>
                   <div class="metric-val">AI</div>
@@ -1898,59 +1898,58 @@
                 <!-- 01 MOTIVATION -->
                 <section class="cs-chapter" id="argus-motivation">
                   <div class="cs-kicker">01 — Motivation</div>
-                  <h4 class="cs-h">An incident platform with no incident tool</h4>
+                  <h4 class="cs-h">Why I started this</h4>
                   <p class="cs-lede">
-                    When something breaks in production, every minute counts. Yet our web platform had no
-                    dedicated place to manage incidents: no single view of what was on fire, who was
-                    responding, or where to jump in.
+                    When something broke on our web platform, there was no proper tool to manage it. We simply
+                    didn't have a dedicated incident management tool, so every incident started with people
+                    asking each other what was going on.
                   </p>
                   <ul class="cs-problems">
-                    <li><b>No single source of truth.</b> There was no dedicated incident management tool on the web platform, so the state of an incident had to be pieced together from different places.</li>
-                    <li><b>Hard to see the whole picture.</b> Without one overview, it was difficult to tell at a glance which situations were active, which were resolved and which services were affected.</li>
-                    <li><b>Slow to get people into the room.</b> Responders needed a faster way from "you've been requested" to actually joining the situation room.</li>
-                    <li><b>Context lives in people's heads.</b> Answering "what happened, and what's been tried?" depended on whoever happened to be online.</li>
+                    <li><b>Nowhere to look.</b> There was no dedicated incident tool, so you had to piece an incident together from different places.</li>
+                    <li><b>No overview.</b> It was hard to tell which situations were still open, which were fixed, and which services were hit.</li>
+                    <li><b>Too many steps to join.</b> Getting pulled into a situation room took longer than it should have.</li>
+                    <li><b>Catching up meant interrupting.</b> If you joined late, the only way to catch up was to ask someone who'd been there from the start.</li>
                   </ul>
                   <blockquote class="cs-quote">
-                    How might we give everyone handling an incident one calm, AI-assisted place to see what's
-                    happening and act on it straight away?
+                    How might we give people one place to see what's going on during an incident, and get
+                    into the room straight away?
                   </blockquote>
                 </section>
 
                 <!-- 02 DEVELOPMENT -->
                 <section class="cs-chapter" id="argus-development">
                   <div class="cs-kicker">02 — Development</div>
-                  <h4 class="cs-h">From a vision to an approved project</h4>
+                  <h4 class="cs-h">How it came together</h4>
                   <p>
-                    Argus started as my own idea: an AI-powered dashboard that brings incident management into
-                    the web platform. I shaped the vision into a proposal, presented it to my manager, and got
-                    the go-ahead to build it with the team. That meant designing not just the screens but the
-                    case for why the tool should exist at all.
+                    Argus wasn't assigned to me. I noticed the gap, sketched out what a dashboard could look like,
+                    and pitched it to my manager. Once it was approved, I worked on the information architecture
+                    and the screens.
                   </p>
 
                   <ol class="cs-steps">
-                    <li><span>Spot the gap</span>No dedicated incident tool existed on the platform.</li>
-                    <li><span>Form a vision</span>An AI-powered dashboard as the single place for CSOs.</li>
-                    <li><span>Propose</span>Pitched the idea and its value to my manager.</li>
-                    <li><span>Approved</span>The proposal was approved and the work began.</li>
-                    <li><span>Design</span>Information architecture, dashboard UI and AI assistant.</li>
+                    <li><span>Noticed the gap</span>We had no incident tool on the platform.</li>
+                    <li><span>Sketched the idea</span>One dashboard for every CSO, with AI built in.</li>
+                    <li><span>Pitched it</span>Took the proposal to my manager.</li>
+                    <li><span>Got approval</span>It was approved and we started.</li>
+                    <li><span>Designed it</span>Structure, screens and the AI assistant.</li>
                   </ol>
 
-                  <h5 class="cs-sub">Design principles</h5>
+                  <h5 class="cs-sub">Three things I cared about most</h5>
                   <div class="cs-features">
                     <article>
                       <span class="cs-num">01</span>
-                      <h6>Status at a glance</h6>
-                      <p>Each situation carries a colour-coded edge and label (red for active, green for resolved), so the feed can be scanned in seconds.</p>
+                      <h6>Seeing the status without reading</h6>
+                      <p>I colour-coded every card, red for active and green for resolved. In the middle of an incident nobody wants to read paragraphs.</p>
                     </article>
                     <article>
                       <span class="cs-num">02</span>
-                      <h6>Action where attention is</h6>
-                      <p>"Join CSO Room" sits on every incident card and switches off once a case is resolved, so the next step is always one click away.</p>
+                      <h6>Joining in one click</h6>
+                      <p>The Join CSO Room link sits on the card itself. Once a case is resolved it greys out, so nobody ends up in a room that's already closed.</p>
                     </article>
                     <article>
                       <span class="cs-num">03</span>
-                      <h6>AI alongside, not instead</h6>
-                      <p>The assistant is docked beside the feed, so people can ask questions without losing sight of the live incidents.</p>
+                      <h6>Keeping the assistant on the side</h6>
+                      <p>I put the AI chat next to the feed, not on top of it, so you can ask a question and still see new incidents coming in.</p>
                     </article>
                   </div>
                 </section>
@@ -1960,8 +1959,8 @@
                   <div class="cs-kicker">03 — Realisation</div>
                   <h4 class="cs-h">The Argus dashboard</h4>
                   <p>
-                    One screen brings together the overview, a live feed of the last 24 hours and the AI
-                    assistant. The numbered points below show how the design principles turned into interface.
+                    The main screen puts the overview, the last 24 hours of incidents and the AI assistant side by
+                    side. The numbers point to the parts that matter most.
                   </p>
                   <figure class="cs-annotated">
                     <div class="cs-annotated-img">
@@ -1984,27 +1983,27 @@
                   </figure>
 
                   <h5 class="cs-sub">Beyond the dashboard</h5>
-                  <p>Five more views complete the flow, from knowing who to page to closing an incident. Scroll sideways to see them all.</p>
+                  <p>The other screens cover the rest of the flow, from knowing who to call to following an incident until it's closed. Scroll sideways.</p>
                   <div class="phone-scroll-wrap cs-screens">
                     <div class="phone-scroll">
                       <figure class="phone-scroll-item browser-scroll-item">
-                        <img src="images/argus-02-on-call.webp" alt="Argus On-call schedule screen: Who is on call now, the escalation path and handovers" loading="lazy" width="2122" height="1430" />
+                        <img src="argus-02-on-call.webp" alt="Argus On-call schedule screen: Who is on call now, the escalation path and handovers" loading="lazy" width="2122" height="1430" />
                         <figcaption><b>On-call schedule</b>Who is on call now, the escalation path and handovers</figcaption>
                       </figure>
                       <figure class="phone-scroll-item browser-scroll-item">
-                        <img src="images/argus-03-cso-overview.webp" alt="Argus CSO overview screen: Every situation in one filterable table" loading="lazy" width="2122" height="1430" />
+                        <img src="argus-03-cso-overview.webp" alt="Argus CSO overview screen: Every situation in one filterable table" loading="lazy" width="2122" height="1430" />
                         <figcaption><b>CSO overview</b>Every situation in one filterable table</figcaption>
                       </figure>
                       <figure class="phone-scroll-item browser-scroll-item">
-                        <img src="images/argus-04-situation-room.webp" alt="Argus Situation room screen: AI summary, timeline and responders per incident" loading="lazy" width="2122" height="1430" />
+                        <img src="argus-04-situation-room.webp" alt="Argus Situation room screen: AI summary, timeline and responders per incident" loading="lazy" width="2122" height="1430" />
                         <figcaption><b>Situation room</b>AI summary, timeline and responders per incident</figcaption>
                       </figure>
                       <figure class="phone-scroll-item browser-scroll-item">
-                        <img src="images/argus-05-ai-assistant.webp" alt="Argus AI assistant in use screen: Similar past incidents, next steps, drafted updates" loading="lazy" width="2122" height="1430" />
+                        <img src="argus-05-ai-assistant.webp" alt="Argus AI assistant in use screen: Similar past incidents, next steps, drafted updates" loading="lazy" width="2122" height="1430" />
                         <figcaption><b>AI assistant in use</b>Similar past incidents, next steps, drafted updates</figcaption>
                       </figure>
                       <figure class="phone-scroll-item browser-scroll-item">
-                        <img src="images/argus-06-settings.webp" alt="Argus Settings screen: Services followed, notifications, AI preferences" loading="lazy" width="2122" height="1430" />
+                        <img src="argus-06-settings.webp" alt="Argus Settings screen: Services followed, notifications, AI preferences" loading="lazy" width="2122" height="1430" />
                         <figcaption><b>Settings</b>Services followed, notifications, AI preferences</figcaption>
                       </figure>
                     </div>
@@ -2014,16 +2013,16 @@
                 <!-- 04 IMPACT -->
                 <section class="cs-chapter" id="argus-impact">
                   <div class="cs-kicker">04 — Impact</div>
-                  <h4 class="cs-h">What Argus changes</h4>
+                  <h4 class="cs-h">What I wanted it to change</h4>
                   <dl class="cs-wins">
-                    <div><dt>Ownership</dt><dd>A self-initiated idea, proposed bottom-up and approved by my manager: the platform's first dedicated incident management tool.</dd></div>
-                    <div><dt>Visibility</dt><dd>One overview replaces piecing an incident together from different places.</dd></div>
-                    <div><dt>Speed</dt><dd>Responders go from a request to the situation room in a single click.</dd></div>
-                    <div><dt>Focus</dt><dd>Colour-coded status and AI help aim to lower the cognitive load on people working under pressure.</dd></div>
+                    <div><dt>Ownership</dt><dd>It started as my idea and got approved, the first incident tool on our platform.</dd></div>
+                    <div><dt>One place</dt><dd>One place to look, instead of piecing an incident together from different tools and people.</dd></div>
+                    <div><dt>Faster</dt><dd>Less time between being asked to help and actually being in the room.</dd></div>
+                    <div><dt>Calmer</dt><dd>Late joiners can catch up by asking the assistant, not by interrupting the team.</dd></div>
                   </dl>
                   <!-- TODO (Suman): add real outcomes here once you have them, e.g. adoption, feedback quotes, before/after time-to-join. -->
                   <!-- TODO (Suman): add a short "Reflection": what you learned and what you would do differently. -->
-                  <blockquote class="cs-quote cs-closing">Incidents are stressful. The tool shouldn't be.</blockquote>
+                  
                   <a class="btn-ghost" href="https://sumanifyux.github.io/portfolio_/argus-case-study.pdf" target="_blank" rel="noopener">Read the full Argus case study (PDF) ↗</a>
                 </section>
               </div>
